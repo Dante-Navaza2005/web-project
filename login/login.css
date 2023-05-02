@@ -1,0 +1,57 @@
+body{
+    background: linear-gradient(to top left, purple, black);
+}
+
+
+.login-form{
+    
+    justify-content: center;
+    padding-top: 50px;
+    text-align: center;
+    font-family: monospace;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 50px;
+    padding-top: 40px;
+    -webkit-text-stroke: 2px rgb(185, 42, 185);
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;    
+
+    color:rgb(231, 219, 219)11, 188, 188)
+}
+
+
+
+#username-input{
+    padding-top: 10px;
+}
+
+#password-input{
+    padding-top: 10px;
+}
+
+#submit-button{
+    background-color: black;
+    border: 2px outset darkmagenta;
+    color: darkmagenta;
+    -webkit-text-stroke: 0px;
+    border-radius: 10px;
+}
+
+#submit-button:hover{
+    background-color: aliceblue;
+}
+
+.wrong-credentials{
+    display: none;
+    color: darkred;
+    background-color: rgb(241, 56, 241);
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 10px;
+    border: 2px outset darkmagenta;
+    margin-top: 30px;
+}
+
+.wrong-credentials p{
+    margin: 10px;
+}
