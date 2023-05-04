@@ -8,7 +8,7 @@ form.addEventListener("submit", (event) =>
     writtenPassword = document.getElementById("password-input").value
     if(writtenUsername == username && writtenPassword == password){
         event.preventDefault();
-        alert("Correct Credentials")
+        window.location.href = "../main-page/main.html";
     }
     else{
         event.preventDefault();
