@@ -1,15 +1,15 @@
 <html>
     <head>
-        <title>Rate it!</title>
+        <title>User Login</title>
         <link rel="stylesheet" href="firebase.css">
     </head>
     <body>
         <form id="product_form">
-        <h1> Add a new product: </h1>
-        <label>Name:</label>
-        <input type="text" id="product_name">
-        <label>Image URL:</label>
-        <input type="text" id="product_image_url">
+        <h1> Add a new user: </h1>
+        <label>Username:</label>
+        <input type="text" id="username">
+        <label>Password:</label>
+        <input type="password" id="password">
         <input type="submit" value="Go!" class="submit_button"></input>
         </form>
     </body>
@@ -18,7 +18,7 @@
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-    import { getFirestore, setDoc} from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
+    import { getFirestore, setDoc, addDoc, collection} from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
@@ -40,15 +40,18 @@
     const analytics = getAnalytics(app);
     const database = getFirestore(app);
 
-    var form = document.getElementById("product_form")
+    var form = document.getElementById("product_form");
     form.addEventListener("submit", (event) =>{
         
-        var name = document.getElementById("product_name").value;
-        var image_url = document.getElementById("product_image_url").value;
+        var name = document.getElementById("username").value;
+        var password = document.getElementById("password").value
 
-        addDoc(collection(database, "products"))
+        addDoc(collection(database, "Users"), {
+            name: name,
+            password: password,
+        });
 
-        alert("Product created!")
+        alert("User added!")
         event.preventDefault();
         // This will happen as soon the button is clicked
     });
